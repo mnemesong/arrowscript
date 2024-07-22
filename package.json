@@ -1,0 +1,30 @@
+{
+  "name": "arrowscript",
+  "version": "1.0.0",
+  "description": "Prototype of functional language",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "peg": "pegjs ./parser-peg/parser.pegjs",
+    "test1": "node ./tests/test1",
+    "test": "mocha ./tests/**/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnemesong/arrowscript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mnemesong/arrowscript/issues"
+  },
+  "homepage": "https://github.com/mnemesong/arrowscript#readme",
+  "dependencies": {
+    "@types/node": "^20.14.11",
+    "mocha": "^10.7.0",
+    "pegjs": "^0.10.0"
+  }
+}

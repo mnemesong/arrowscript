@@ -1,0 +1,2 @@
+Int : Number(x -> x % 1 == 0) //type definition
+Date : String(x -> $reg.match("\n\n\-\n\n-\n\n\n\n"))

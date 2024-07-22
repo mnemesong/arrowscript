@@ -1,0 +1,87 @@
+a = 12 //number
+b = "aboba" //string
+d = "
+multiline 
+string"
+c = `
+    untatable
+    multiline
+    string
+` //multiline string
+
+/*
+    multiline
+    comment
+*/
+
+a == b #= true //assertion
+
+Int : Number(x -> x % 1 == 0) //type definition
+Date : String(x -> $reg.match("\n\n\-\n\n-\n\n\n\n"))
+
+//type union
+Scalar : [
+    Number,
+    String,
+    Bool,
+    Data, //is custom data
+    Symbol, //generates unique hash
+    Error,
+]
+
+Collection : [
+    Array,
+    Map,
+]
+
+Type: [
+    Scalar,
+    Function,
+]
+
+Unit : Symbol()
+
+divideTwo : Number -> Number
+divideTwo = x -> x / 2
+
+vector = [1, 2, 3, 4, 5,] //eq
+vector = [
+    1 -> 1,
+    2 -> 2,
+    3 -> 3,
+    4 -> 4,
+    5 -> 5,
+    _ -> Nil,
+]
+
+A : Data($data.checkIsA) // New algebraic type definition
+//equal to
+A = symbol.createType(A, $data.checkIsA, Data)
+
+castedInt = 12 #: Int
+
+Record : x -> 'X -> ['X] 
+record : Record<Unit> #=  //Assertion type cast
+(k : String) -> [
+    'a = unit
+](k)
+
+//unsafe cast
+Knex : Data<x -> true>
+
+DataVal = @jsCode(` //macro
+require(knex);
+`) #: Knex
+
+//eq typescript RecordWithProp = Record<>
+RecordWithProp : (t: Record<Type>) -> (Union(t, 12))
+recordWithProp : RecordWithProp
+recordWithProp = (x: Record<Type>) -> [
+    x = 12,
+    'a = x('a),
+](x) #: RecordWithProp
+
+scriptFn = x -> {
+    y = x + 1
+    x
+}

@@ -1,0 +1,3 @@
+a = @defVal(12, Number) //value defenition
+b = @String(aboba) //string value defenition
+jsData = @JS(() -> 12) //custom js code inject
